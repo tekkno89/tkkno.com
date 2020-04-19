@@ -14,7 +14,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
 
       - name: Hugo Build
-        run: hugo -D
+        run: hugo
 
       - name: Publish to AWS S3
         uses: opspresso/action-s3-sync@master
