@@ -1,3 +1,28 @@
-baseURL = "http://example.org/"
+baseURL = "http://tkkno.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "tkKno"
+theme = "noteworthy"
+paginate = 5
+
+[params]
+  showReadMore = true
+  github = "https://github.com/tekkno89"
+  linkedin = "https://www.linkedin.com/in/tknotek/"
+
+[[menu.main]]
+	identifier = "about"
+	name = "About"
+	url = "/about/"
+	weight = 1
+
+[[menu.main]]
+	name = "Posts"
+	identifier = "archives"
+	url = "/archives/"
+	weight = 2
+
+[[menu.main]]
+	name = "Training"
+	identifier = "training"
+	url = "/training/"
+	weight = 3
