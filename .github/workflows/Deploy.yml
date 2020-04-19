@@ -24,3 +24,4 @@ jobs:
           AWS_REGION: "us-west-2"
           FROM_PATH: "./public/"
           DEST_PATH: "s3://www.tkkno.com"
+          CF_RESET: False
