@@ -1,6 +1,7 @@
 baseURL = "http://tkkno.com/"
 languageCode = "en-us"
 title = "tkKno"
+description = "heyo"
 theme = "noteworthy"
 paginate = 5
 
