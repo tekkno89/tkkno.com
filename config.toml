@@ -25,7 +25,7 @@ paginate = 5
 [[menu.main]]
 	name = "Guides"
 	identifier = "guide"
-	url = "/guide/"
+	url = "/guides/"
 	weight = 3
 
 [deployment]
