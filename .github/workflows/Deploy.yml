@@ -17,7 +17,7 @@ jobs:
         run: hugo
 
       - name: Hugo Deploy
-        run: AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} hugo deploy --max-deletes -1 --invalidateCDN
+        run: AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} hugo deploy --maxDeletes -1 --invalidateCDN
 
 #      - name: Publish to AWS S3
 #        uses: opspresso/action-s3-sync@master
