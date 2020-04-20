@@ -13,17 +13,45 @@ paginate = 5
 [[menu.main]]
 	identifier = "about"
 	name = "About"
-	url = "/about/index.html"
+	url = "/about/"
 	weight = 1
 
 [[menu.main]]
 	name = "Posts"
 	identifier = "archives"
-	url = "/posts/index.html"
+	url = "/posts/"
 	weight = 2
 
 [[menu.main]]
-	name = "Training"
-	identifier = "training"
-	url = "/training/"
+	name = "Guides"
+	identifier = "guide"
+	url = "/guide/"
 	weight = 3
+
+[deployment]
+# By default, files are uploaded in an arbitrary order.
+# Files that match the regular expressions in the "Order" list
+# will be uploaded first, in the listed order.
+order = [".jpg$", ".gif$"]
+
+[[deployment.targets]]
+name = "s3Deploy"
+
+URL = "s3://www.tkkno.com?region=us-west-2"
+
+cloudFrontDistributionID = "E11Z9SNGTOKAT9"
+
+[[deployment.matchers]]
+#  Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=86400, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=86400, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
