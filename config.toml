@@ -36,9 +36,7 @@ order = [".jpg$", ".gif$"]
 
 [[deployment.targets]]
 name = "s3Deploy"
-
 URL = "s3://www.tkkno.com?region=us-west-2"
-
 cloudFrontDistributionID = "E11Z9SNGTOKAT9"
 
 [[deployment.matchers]]

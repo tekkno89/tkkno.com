@@ -16,12 +16,15 @@ jobs:
       - name: Hugo Build
         run: hugo
 
-      - name: Publish to AWS S3
-        uses: opspresso/action-s3-sync@master
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-west-2"
-          FROM_PATH: "./public/"
-          DEST_PATH: "s3://www.tkkno.com"
-          CF_RESET: False
+      - name: Hugo Deploy
+        run: AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} hugo deploy
+
+#      - name: Publish to AWS S3
+#        uses: opspresso/action-s3-sync@master
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          AWS_REGION: "us-west-2"
+#          FROM_PATH: "./public/"
+#          DEST_PATH: "s3://www.tkkno.com"
+#          CF_RESET: False
